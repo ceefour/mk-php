@@ -8,6 +8,10 @@ angular.module('mkphp', ['ngRoute', 'mobile-angular-ui',
         templateUrl: 'bundles/app/partials/home.html',
         controller: 'HomeCtrl'
     })
+    .when('/restaurants', {
+        templateUrl: 'bundles/app/partials/restaurant/index.html',
+        controller: 'RestaurantIndexCtrl'
+    })
     .otherwise({
         redirectTo: '/'
     });

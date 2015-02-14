@@ -5,6 +5,16 @@ Tugas Matrikulasi PHP &amp; MySQL
     23214344
     TMDG 9 STEI ITB
 
+## Requirements
+
+Pastikan Composer terinstall:
+
+    curl -sS https://getcomposer.org/installer | php
+    
+Lalu install vendors:
+
+    php ~/composer.phar install
+
 ## Menjalankan
 
     app/console server:run
