@@ -1,0 +1,20 @@
+<div ui-content-for="title">
+    <i class="fa fa-cutlery"></i> Recipes
+</div>
+<div class="scrollable">
+    <div class="scrollable-header">
+        <div class="btn-group">
+            <a class="btn btn-default" href="#/recipes/new"><i class="fa fa-plus"></i> New</a>
+        </div>
+    </div>
+    <div class="scrollable-content">
+        <div class="list-group text-left">
+            <div class="list-group-item list-group-item-home"
+                 ng-repeat="recipe in recipes">
+                <strong>{{recipe.name}}</strong>
+                <p class="pull-right" style="color: maroon"><small>{{recipe.category}}</small></p>
+                <p class="text-muted"><small>{{recipe.description}}</small></p>
+            </div>
+        </div>
+    </div>
+</div>

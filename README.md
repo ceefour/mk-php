@@ -42,3 +42,7 @@ Bila ada perubahan assets, lakukan `app/console assets:install web --symlink` :
     The assets were installed using symbolic links.
     Installing assets for Sensio\Bundle\DistributionBundle into web/bundles/sensiodistribution
     The assets were installed using symbolic links.
+
+## Sample Database Dump
+
+Import file `gigasticphp-sample.sql`
