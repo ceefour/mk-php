@@ -7,6 +7,8 @@ Tugas Matrikulasi PHP &amp; MySQL
 
 ## Requirements
 
+Ubuntu packages: `php5-cli php5-mysql php5-curl mysql-server mysql-client`
+
 Pastikan Composer terinstall:
 
     curl -sS https://getcomposer.org/installer | php

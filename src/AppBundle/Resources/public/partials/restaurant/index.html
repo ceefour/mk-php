@@ -2,13 +2,18 @@
     Restaurants
 </div>
 <div class="scrollable">
-    <!--div class="scrollable-header">
-        header
-    </div-->
+    <div class="scrollable-header">
+        <div class="btn-group">
+            <a class="btn btn-default" href="#/restaurants/new"><i class="fa fa-plus"></i> New</a>
+        </div>
+    </div>
     <div class="scrollable-content">
         <div class="list-group text-left">
-            <div class="list-group-item list-group-item-home">
-                <a href="#/restaurants/ayee">Something</a>
+            <div class="list-group-item list-group-item-home"
+                 ng-repeat="restaurant in restaurants">
+                <strong>{{restaurant.name}}</strong>
+                <p class="pull-right" style="color: orange"><small>{{restaurant.address}}</small></p>
+                <p class="text-muted"><small>{{restaurant.description}}</small></p>
             </div>
         </div>
     </div>
