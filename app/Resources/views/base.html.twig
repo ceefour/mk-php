@@ -2,12 +2,76 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Gigastic{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/app/components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('bundles/app/components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('bundles/app/components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css') }}"/>
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block javascripts %}
+        <script src="{{ asset('bundles/app/components/angularjs/angular.js') }}"></script>
+        <script src="{{ asset('bundles/app/components/angular-route/angular-route.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/services.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/controllers.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/app.js') }}"></script>
+        {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body ng-app="mkphp">
+        <!-- Sidebars -->
+        <div class="sidebar sidebar-left">
+            <div class="scrollable">
+                <h2 class="scrollable-header app-name">Gigastic</h2>
+                <div class="scrollable-content">
+                    <div class="list-group" ui-turn-off="uiSidebarLeft">
+                        <a class="list-group-item" href="#/restaurants">
+                            <i class="fa fa-coffee"></i> Restaurants <i class="fa fa-chevron-right pull-right"></i></a>
+                        <a class="list-group-item" href="#/places">
+                            <i class="fa fa-map-marker"></i> Tourism <i class="fa fa-chevron-right pull-right"></i></a>
+                        <a class="list-group-item" href="#/events">
+                            <i class="fa fa-calendar"></i> Attractions <i class="fa fa-chevron-right pull-right"></i></a>
+                        <a class="list-group-item" href="#/recipes">
+                            <i class="fa fa-cutlery"></i> Recipes <i class="fa fa-chevron-right pull-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app">
+            <div class="navbar navbar-app navbar-absolute-top">
+                <!-- Top Navbar -->
+                <div class="navbar-brand navbar-brand-center"
+                     ui-yield-to="title"><a href="#/">Gigastic</a></div>
+
+                <div class="btn-group pull-left">
+                    <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+                        <i class="fa fa-bars"></i> Menu</div>
+                </div>
+
+                <div class="btn-group pull-right">
+                    <a href="#/" class="btn btn-navbar"><i class="fa fa-home"></i> Home</a>
+                </div>
+            </div>
+
+            {% block body %}
+            <div class="app-body">
+                <div class="app-content">
+                    <ng-view></ng-view>
+                </div>
+            </div>
+            {% endblock %}
+
+        </div>
+
+        <!-- Modals and Overlays -->
+        <div ui-yield-to="modals"></div>
+
+
     </body>
 </html>
